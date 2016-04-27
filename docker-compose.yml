@@ -1,0 +1,7 @@
+web:
+  container_name: grafana
+  image: grafana
+  volumes:
+    - /var/log:/var/log
+  ports:
+    - "3000:3000"
