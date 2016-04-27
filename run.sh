@@ -1,2 +1,2 @@
 #!/bin/bash
-service grafana-server start && vi
+/usr/sbin/grafana-server
