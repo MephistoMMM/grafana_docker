@@ -9,9 +9,9 @@ ENV GRAFANA_VERSION 3.0.0-beta51460725904
 COPY sources.list /etc/apt/sources.list
 
 # Install grafana
-apt-get -y --no-install-recommends install libfontconfig curl ca-certificates && \
+RUN apt-get update -y && apt-get -y --no-install-recommends install libfontconfig curl ca-certificates && \
     apt-get clean && \
-    curl https://grafanarel.s3.amazonaws.com/builds/grafana_${GRAFANA_VERSION}_amd64.deb > /tmp/grafana.deb && \
+    curl http://7xtgln.com2.z0.glb.clouddn.com/grafana_${GRAFANA_VERSION}_amd64.deb > /tmp/grafana.deb && \
     dpkg -i /tmp/grafana.deb && \
     rm /tmp/grafana.deb && \
     apt-get remove -y curl && \
